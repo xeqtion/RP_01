@@ -18,15 +18,18 @@ int main()
 {
     double precision;
     printf("正在为您计算 π 值,请输入精度(大于0且小于等于1):");
-    scanf("%lf",&precision);
-    if (precision<=0||precision>1)
+    while (scanf("%lf",&precision)!=EOF)
     {
-        printf("请输入正确的精度!\n");
-    }
-    else
-    {
-        double Pi=calculatePi(precision);
-        printf("计算得出 π 的值为: %.10lf\n",Pi);
+        if (precision<=0||precision>1)
+        {
+            printf("请输入正确的精度!\n");
+        }
+        else
+        {
+            double Pi=calculatePi(precision);
+            printf("计算得出 π 的值为: %.10lf\n",Pi);
+        }
+        printf("正在为您计算 π 值,请输入精度(大于0且小于等于1):");
     }
     return 0;
 }
